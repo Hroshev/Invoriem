@@ -1,0 +1,279 @@
+@import "../scss/reset";
+@import "../scss/fonts";
+@import "../scss/media-requests";
+@import "../scss/global";
+//*Import Swiper + navigation, pagination modules
+// @import "../../node_modules/swiper/swiper";
+
+
+//*Import all modules Swiper
+@import "../../node_modules/swiper/swiper-bundle";
+
+/* Header */
+.header {
+    position: relative;
+    min-height: 100vh;
+    background-color: #e1edf2;
+    background: url("@img/header-bg.jpg") 50% 50% / cover no-repeat;
+    &__top {
+        margin-bottom: 126px;
+        padding: 44px 0;
+    }
+    &__content {
+        max-width: 1060px;
+        @include phone {
+            display: none;
+        }
+    }
+    &__title {
+        margin-bottom: 48px;
+        max-width: 734px;
+        font-size: 80px;
+        font-weight: 700;
+        color: #114455;
+        @include tablet {
+            font-size: 50px;
+            margin-bottom: 28px;
+        }
+    }
+    &__text {
+        margin-bottom: 72px;
+        font-size: 34px;
+        letter-spacing: -0.02em;
+        line-height: 1.5;
+        color: rgba(31, 31, 31, 0.7);
+        @include tablet {
+            margin-bottom: 52px;
+            font-size: 24px;
+        }
+    }
+    &__content-mobile {
+        display: none;
+        @include phone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 27px;
+        }
+    }
+    &__logo-mobile {
+        width: 244px;
+    }
+    &__text-mobile {
+        max-width: 237px;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.06em;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        color: rgba(31, 31, 31, 0.7);
+    }
+    &__arrows {
+        position: absolute;
+        bottom: 59px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include phone {
+            width: 19px;
+            height: 16px;
+            bottom: 32px;
+        }
+    }
+}
+
+/* Nav */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo {
+        @include phone {
+            margin-left: 9px;
+            max-width: 109px;
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 118px;
+        @include tablet {
+            column-gap: 30px;
+        }
+        @include phone {
+            display: none;
+        }
+    }
+    &__link {
+        font-size: 20px;
+        font-weight: 700;
+        color: #114455;
+        transition: opacity 0.2s ease-in;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__btn {
+        display: none;
+        background-color: transparent;
+        @include phone {
+            display: block;
+            margin-right: 1px;
+        }
+    }
+}
+
+/* Case-studies */
+.case-studies {
+    padding: 184px 0px;
+    @include tablet {
+        padding: 100px 0px;
+    }
+    @include phone {
+        padding: 80px 0px;
+    }
+    &__title {
+        margin-bottom: 12px;
+        max-width: 1070px;
+        @include phone {
+            margin-bottom: 7px;
+        }
+    }
+    &__text {
+        margin-bottom: 100px;
+        max-width: 1070px;
+        @include tablet {
+            margin-bottom: 80px;
+        }
+        @include phone {
+            margin-bottom: 31px;
+        }
+    }
+}
+
+/* Slider */
+.slider {
+    width: 100%;
+    height: 100%;
+    &__item {
+        position: relative;
+        padding-left: 80px;
+        @include phone {
+            padding-left: 33px;
+        }
+    }
+    &__title {
+        position: absolute;
+        left: 0;
+        bottom: 17%;
+        font-size: 140px;
+        font-weight: 700;
+        background: -webkit-linear-gradient(0deg, rgba(17, 68, 85, 1) 80px, rgba(255, 255, 255, 1) 80px);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @media (max-width: 1550px) {
+            font-size: 80px;
+        }
+        @include phone {
+            bottom: 22px;
+            font-size: 60px;
+            background: -webkit-linear-gradient(0deg, rgba(17, 68, 85, 1) 33px, rgba(255, 255, 255, 1) 33px);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    &__img {
+        max-width: 630px;
+        height: auto;
+        @include tablet {
+            max-width: 430px;
+        }
+        @include phone {
+            min-width: 224px;
+            height: 264px;
+        }
+    }
+}
+
+/* Section-video */
+.section-video {
+    padding: 144px 0px;
+    @include tablet {
+        padding: 0px 0px 80px 0px;
+    }
+    &__title {
+        margin-bottom: 12px;
+        max-width: 1070px;
+    }
+    &__text {
+        margin-bottom: 78px;
+    }
+}
+
+/* Video */
+.video {
+    position: relative;
+    &__overlay {
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 68, 85, 0.5);
+        }
+    }
+    &__btn {
+        position: absolute;
+        display: inline-block;
+        border-radius: 50px;
+        top: 50%;
+        left: 50%;
+        z-index: 9;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+    }
+    &__object {
+        width: 100%;
+        vertical-align: top;
+    }
+}
+
+/* Footer */
+.footer {
+    padding: 162px 0px 82px;
+    a {
+        font-size: 20px;
+        letter-spacing: 0.04em;
+        line-height: 36px;
+        color: rgba(31, 31, 31, 0.7);
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+    &__copyright {
+        font-size: 20px;
+        letter-spacing: 0.04em;
+        line-height: 36px;
+        color: rgba(31, 31, 31, 0.7);
+    }
+    &__nav {
+        display: flex;
+        column-gap: 104px;
+    }
+    &__socials {
+        display: flex;
+        column-gap: 26px;
+    }
+}
+
+.social-icon {
+    transition: opacity 0.2s ease-in;
+    &:hover {
+        opacity: 0.7;
+    }
+}

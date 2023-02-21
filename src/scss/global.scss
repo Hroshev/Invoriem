@@ -1,0 +1,97 @@
+/* Basic Styles */
+body {
+  font-size: 18px;
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgba(31, 31, 31, 0.7);
+  background-color: #fff;
+}
+
+[class*="__container"] {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 1750px;
+}
+
+.container-right {
+  padding-left: calc((100% - 1750px) / 2 + 15px);
+  overflow: hidden;
+  @media (max-width: 1749px) {
+    padding-left: 15px;
+  }
+}
+
+.none {
+  display: none !important;
+}
+
+.title {
+  font-size: 80px;
+  font-weight: 700;
+  color: #1f1f1f;
+  @include tablet {
+    font-size: 50px;
+  }
+  @include phone {
+    font-size: 32px; 
+  }
+}
+
+.text {
+  font-size: 28px;
+  line-height: 1.57;
+  color: #1f1f1f;
+  @include phone {
+    font-size: 16px; 
+  }
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 72px 10px 24px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 2px;
+  border: 1px solid #114455;
+  color: #114455;
+  transition: all 0.2s ease-in;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 32px;
+    height: 32px;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url("@img/icons/arrow-right-black.svg") 50% 50% / cover no-repeat;
+    transition: all 0.2s ease-in;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #114455;
+    &::after {
+      background-image: url("@img/icons/arrow-right-white.svg");
+    }
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+  &--big {
+    padding: 14px 80px 14px 32px;
+  }
+  &--dark {
+    color: #fff;
+    background-color: #114455;
+    transition: opacity 0.2s ease-in;
+    &::after {
+      background: url("@img/icons/arrow-right-white.svg") 50% 50% / cover no-repeat;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
