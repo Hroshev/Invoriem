@@ -17,7 +17,6 @@ body {
 
 .container-right {
   padding-left: calc((100% - 1750px) / 2 + 15px);
-  overflow: hidden;
   @media (max-width: 1749px) {
     padding-left: 15px;
   }
@@ -25,6 +24,10 @@ body {
 
 .none {
   display: none !important;
+}
+
+.no-scroll {
+  overflow-y: hidden !important;
 }
 
 .title {
